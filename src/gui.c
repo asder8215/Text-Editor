@@ -3,6 +3,7 @@
 #include "tab-page.h"
 #include "server.h"
 #include "client.h"
+#include "settings.h"
 #include <stdio.h>
 #include <string.h>
 
@@ -208,6 +209,9 @@ void main_window(AdwApplication *app) {
     GtkToggleButton* share_toggle = GTK_TOGGLE_BUTTON(gtk_builder_get_object(builder, "share-toggle"));
     gtk_button_set_label(GTK_BUTTON(share_toggle), TOGGLE_LABEL_OFF);
     g_signal_connect(share_toggle, "clicked", G_CALLBACK(share_toggle_click), share_click_params);
+
+    GtkButton* settings_btn = GTK_BUTTON(gtk_builder_get_object(builder, "settings-btn"));
+    g_signal_connect(settings_btn, "clicked", G_CALLBACK(settings_click), window);
 
     gtk_window_present(GTK_WINDOW(window));
 }

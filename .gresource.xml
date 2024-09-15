@@ -4,5 +4,6 @@
     <file>main-window.ui</file>
     <file>share-dialog.ui</file>
     <file>style.css</file>
+    <file>settings.ui</file>
   </gresource>
 </gresources>

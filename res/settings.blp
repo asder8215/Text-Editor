@@ -1,0 +1,59 @@
+using Gtk 4.0;
+using Gio 2.0;
+using Adw 1;
+
+
+Adw.PreferencesWindow setting-dialog {
+    default-width: 200;
+    default-height: 400;
+
+    Adw.PreferencesPage font-page {
+        title: "Font";
+        Adw.PreferencesGroup {
+            title: "Font Customization";
+            description: "These are all the font customizability options that TeXiT currently supports.";
+            Adw.ActionRow {
+                title: "Font Family and Size";
+                Gtk.FontDialogButton font-dialog {}
+            }
+            Separator { styles ["spacer"] }
+            Adw.ComboRow font-style-row {
+                title: "Font Style";
+                subtitle: "Choose whether to display the text editor in bold, italic, bold italic, or none.";
+                model: Gtk.StringList {
+                    strings [ 
+                        "None",
+                        "Bold",
+                        "Italic",
+                        "Bold Italic"
+                    ]
+                };
+            }
+            Separator { styles ["spacer"] }
+            Adw.ActionRow {
+                title: "Ligature";
+                subtitle: "Merge symbols (e.g. <=, >=)";
+                use-markup: false;
+                Gtk.Switch ligatures-switch {
+                    vexpand: false;
+                    valign: center;
+                }
+            }
+        }
+    }
+    Adw.PreferencesPage page-2 {
+        Adw.PreferencesGroup {
+            
+        }
+    }
+    Adw.PreferencesPage page-3 {
+        Adw.PreferencesGroup {
+
+        }
+    }
+    Adw.PreferencesPage page-4 {
+        Adw.PreferencesGroup {
+
+        }
+    }
+}
